@@ -45,6 +45,8 @@ namespace HN212526_DESAFIO2_CLAVE1
             this.btnSacardinero = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.lbta = new System.Windows.Forms.Label();
+            this.lbTransactions = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +83,7 @@ namespace HN212526_DESAFIO2_CLAVE1
             // 
             // txtnumeroDUI
             // 
-            this.txtnumeroDUI.Location = new System.Drawing.Point(167, 117);
+            this.txtnumeroDUI.Location = new System.Drawing.Point(184, 121);
             this.txtnumeroDUI.Name = "txtnumeroDUI";
             this.txtnumeroDUI.Size = new System.Drawing.Size(182, 20);
             this.txtnumeroDUI.TabIndex = 3;
@@ -89,7 +91,7 @@ namespace HN212526_DESAFIO2_CLAVE1
             // dui
             // 
             this.dui.AutoSize = true;
-            this.dui.Location = new System.Drawing.Point(164, 101);
+            this.dui.Location = new System.Drawing.Point(181, 105);
             this.dui.Name = "dui";
             this.dui.Size = new System.Drawing.Size(83, 13);
             this.dui.TabIndex = 5;
@@ -99,7 +101,7 @@ namespace HN212526_DESAFIO2_CLAVE1
             // labelsaldo
             // 
             this.labelsaldo.AutoSize = true;
-            this.labelsaldo.Location = new System.Drawing.Point(167, 143);
+            this.labelsaldo.Location = new System.Drawing.Point(184, 147);
             this.labelsaldo.Name = "labelsaldo";
             this.labelsaldo.Size = new System.Drawing.Size(76, 13);
             this.labelsaldo.TabIndex = 6;
@@ -107,7 +109,7 @@ namespace HN212526_DESAFIO2_CLAVE1
             // 
             // txtSaldo
             // 
-            this.txtSaldo.Location = new System.Drawing.Point(167, 159);
+            this.txtSaldo.Location = new System.Drawing.Point(184, 163);
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.Size = new System.Drawing.Size(182, 20);
             this.txtSaldo.TabIndex = 8;
@@ -115,7 +117,7 @@ namespace HN212526_DESAFIO2_CLAVE1
             // txtInteres
             // 
             this.txtInteres.Enabled = false;
-            this.txtInteres.Location = new System.Drawing.Point(170, 285);
+            this.txtInteres.Location = new System.Drawing.Point(22, 279);
             this.txtInteres.Name = "txtInteres";
             this.txtInteres.Size = new System.Drawing.Size(179, 20);
             this.txtInteres.TabIndex = 9;
@@ -124,7 +126,7 @@ namespace HN212526_DESAFIO2_CLAVE1
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(170, 266);
+            this.label4.Location = new System.Drawing.Point(22, 260);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 13);
             this.label4.TabIndex = 10;
@@ -133,7 +135,7 @@ namespace HN212526_DESAFIO2_CLAVE1
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(195, 415);
+            this.btnSalir.Location = new System.Drawing.Point(47, 409);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(127, 23);
             this.btnSalir.TabIndex = 11;
@@ -145,7 +147,7 @@ namespace HN212526_DESAFIO2_CLAVE1
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(167, 220);
+            this.label5.Location = new System.Drawing.Point(19, 214);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 13);
             this.label5.TabIndex = 13;
@@ -155,7 +157,7 @@ namespace HN212526_DESAFIO2_CLAVE1
             // txtCuentaID
             // 
             this.txtCuentaID.Enabled = false;
-            this.txtCuentaID.Location = new System.Drawing.Point(170, 236);
+            this.txtCuentaID.Location = new System.Drawing.Point(22, 230);
             this.txtCuentaID.Name = "txtCuentaID";
             this.txtCuentaID.Size = new System.Drawing.Size(179, 20);
             this.txtCuentaID.TabIndex = 12;
@@ -163,7 +165,7 @@ namespace HN212526_DESAFIO2_CLAVE1
             // 
             // btnSacardinero
             // 
-            this.btnSacardinero.Location = new System.Drawing.Point(195, 311);
+            this.btnSacardinero.Location = new System.Drawing.Point(47, 305);
             this.btnSacardinero.Name = "btnSacardinero";
             this.btnSacardinero.Size = new System.Drawing.Size(127, 23);
             this.btnSacardinero.TabIndex = 14;
@@ -174,7 +176,7 @@ namespace HN212526_DESAFIO2_CLAVE1
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(195, 340);
+            this.btnSave.Location = new System.Drawing.Point(47, 344);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(127, 23);
             this.btnSave.TabIndex = 15;
@@ -185,7 +187,7 @@ namespace HN212526_DESAFIO2_CLAVE1
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(218, 188);
+            this.btnIngresar.Location = new System.Drawing.Point(235, 192);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 23);
             this.btnIngresar.TabIndex = 7;
@@ -193,12 +195,33 @@ namespace HN212526_DESAFIO2_CLAVE1
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
+            // lbta
+            // 
+            this.lbta.AutoSize = true;
+            this.lbta.Location = new System.Drawing.Point(265, 230);
+            this.lbta.Name = "lbta";
+            this.lbta.Size = new System.Drawing.Size(77, 13);
+            this.lbta.TabIndex = 16;
+            this.lbta.Text = "Transacciones";
+            this.lbta.Visible = false;
+            // 
+            // lbTransactions
+            // 
+            this.lbTransactions.FormattingEnabled = true;
+            this.lbTransactions.Location = new System.Drawing.Point(268, 246);
+            this.lbTransactions.Name = "lbTransactions";
+            this.lbTransactions.Size = new System.Drawing.Size(220, 186);
+            this.lbTransactions.TabIndex = 17;
+            this.lbTransactions.Visible = false;
+            // 
             // logeo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(517, 450);
+            this.Controls.Add(this.lbTransactions);
+            this.Controls.Add(this.lbta);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnSacardinero);
             this.Controls.Add(this.label5);
@@ -244,6 +267,8 @@ namespace HN212526_DESAFIO2_CLAVE1
         private System.Windows.Forms.Button btnSacardinero;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.Label lbta;
+        private System.Windows.Forms.ListBox lbTransactions;
     }
 }
 

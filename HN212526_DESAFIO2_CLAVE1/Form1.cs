@@ -82,6 +82,8 @@ namespace HN212526_DESAFIO2_CLAVE1
                     txtnumeroDUI.Enabled = false;
                     txtSaldo.Enabled = false;
                     bankdata.actualizarSaldo(bankdata.interes / 100);
+                    lbta.Visible = true;
+                    lbTransactions.Visible = true;
                 }
             }
             else
@@ -120,6 +122,8 @@ namespace HN212526_DESAFIO2_CLAVE1
             MessageBox.Show("Saldo actualizado a " + bankdata.saldo + "$");
             txtSaldo.Text = Convert.ToString(bankdata.saldo);
             bankdata.actualizarSaldo(bankdata.interes / 100);
+            lbTransactions.Items.Add("Se ingresaron " +valor+ "$");
+            lbTransactions.Items.Add("Saldo actualizado a  " + bankdata.saldo + "$");
         }
 
         private void btnSacardinero_Click(object sender, EventArgs e)
@@ -159,6 +163,8 @@ namespace HN212526_DESAFIO2_CLAVE1
                 MessageBox.Show("Se ha retirado: " + Convert.ToString(valor) + "$ con exito");
                 txtSaldo.Text = Convert.ToString(bankdata.saldo);
                 bankdata.actualizarSaldo(bankdata.interes / 100);
+                lbTransactions.Items.Add("Se retiraton" + valor + "$");
+                lbTransactions.Items.Add("Saldo actualizado a  " +bankdata.saldo + "$");
             }
 
         }
