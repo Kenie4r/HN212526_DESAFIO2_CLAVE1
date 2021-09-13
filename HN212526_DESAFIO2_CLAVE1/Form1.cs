@@ -118,9 +118,14 @@ namespace HN212526_DESAFIO2_CLAVE1
                     MessageBox.Show("Por favor ingrese el valor en números");
                 }
             } while (terminar == false);
+            //guardamos y actualizamos el saldo actual
             bankdata.saveMoney(valor);
+
+            //mostramos el cambio al usuario
             MessageBox.Show("Saldo actualizado a " + bankdata.saldo + "$");
             txtSaldo.Text = Convert.ToString(bankdata.saldo);
+            bankdata.setInteres();//cambiamos el interes por el cambio de saldo
+            txtInteres.Text = Convert.ToString(bankdata.interes);
             bankdata.actualizarSaldo(bankdata.interes / 100);
             lbTransactions.Items.Add("Se ingresaron " +valor+ "$");
             lbTransactions.Items.Add("Saldo actualizado a  " + bankdata.saldo + "$");
@@ -159,12 +164,16 @@ namespace HN212526_DESAFIO2_CLAVE1
 
                     }
                 } while (terminar == false);
+                //lamamos a la funcion de earnmoney que le resta el valor actual a lo que tenemos
                 bankdata.earnMoney(valor);
+                //simplemente mostramos los cambios al usuario
                 MessageBox.Show("Se ha retirado: " + Convert.ToString(valor) + "$ con exito");
                 txtSaldo.Text = Convert.ToString(bankdata.saldo);
                 bankdata.actualizarSaldo(bankdata.interes / 100);
                 lbTransactions.Items.Add("Se retiraton" + valor + "$");
                 lbTransactions.Items.Add("Saldo actualizado a  " +bankdata.saldo + "$");
+                bankdata.setInteres();//cambiamos el interes por el cambio de saldo
+                txtInteres.Text = Convert.ToString(bankdata.interes);
             }
 
         }
@@ -180,7 +189,7 @@ namespace HN212526_DESAFIO2_CLAVE1
             //ahora es momento de generar toda la información en la pantalla
             btnIngresar.Visible = true;
             labelsaldo.Text = "Saldo inicial";
-            //vamos a hacer visibles los datos
+            //hace visible la parte de logeo pero en los demás los hacemos invisibles
             txtCuentaID.Text = "";
             txtCuentaID.Visible = false;
             label5.Visible = false;
@@ -192,11 +201,14 @@ namespace HN212526_DESAFIO2_CLAVE1
             btnSalir.Visible = false;
             btnSave.Visible = false;
 
-            //calncelamos cambiar datos
+            //oculatamos y limpiamos todos los inputs
             txtnumeroDUI.Enabled = true;
             txtSaldo.Enabled = true;
             txtnumeroDUI.Text = "";
             txtSaldo.Text = "";
+            lbTransactions.Items.Clear();
+            lbta.Visible = false;
+            lbTransactions.Visible = false;
         }
     }
 }

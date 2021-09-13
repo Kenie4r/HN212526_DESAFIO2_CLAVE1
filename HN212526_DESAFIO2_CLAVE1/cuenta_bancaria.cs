@@ -87,10 +87,12 @@ namespace HN212526_DESAFIO2_CLAVE1
         
         }
 
-
+        //función pra guardar más dinero
         public void  saveMoney(double more)
         {
+            //convertimos nuestro valor a string para no obtener errores
             string money = Convert.ToString(more);
+            //luego solo sumamos el valor
             saldo += float.Parse(money);
         }
         public void earnMoney(double minus)
@@ -103,18 +105,30 @@ namespace HN212526_DESAFIO2_CLAVE1
         //crear interes
         public void setInteres()
         {
-            if(saldo == 0)
+            //el interes va  a depender de cuanto dinero inicial este ingrese
+
+            if (saldo == 0)
             {
                 interes = 0;
+            } else if (saldo <= 10)
+            {
+                interes = 2.5F;
             }
-            else if(saldo < 20)
+            else if (saldo <= 20)
             {
                 interes = 5;
             }
-            else if(saldo<100)
+            else if (saldo <= 50)
+            {
+                interes = 8.4F;
+            }
+            else if (saldo < 100)
             {
                 interes = 10;
-            }else if(saldo <= 500)
+            } else if (saldo<=250) {
+                interes = 12.5F;
+            }
+            else if (saldo <= 500)
             {
                 interes = 15;
             }
