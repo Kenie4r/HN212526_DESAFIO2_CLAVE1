@@ -37,6 +37,7 @@ namespace HN212526_DESAFIO2_CLAVE1
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+           
             string textbox1 = txtnumeroDUI.Text, textSaldo = txtSaldo.Text;
             if((textbox1.Length>0 && IsNumeric(textbox1)) && (textSaldo.Length > 0 && IsNumeric(textSaldo)))
             {
@@ -80,7 +81,7 @@ namespace HN212526_DESAFIO2_CLAVE1
                     //calncelamos cambiar datos
                     txtnumeroDUI.Enabled = false;
                     txtSaldo.Enabled = false;
-
+                    bankdata.actualizarSaldo(bankdata.interes / 100);
                 }
             }
             else
@@ -118,7 +119,7 @@ namespace HN212526_DESAFIO2_CLAVE1
             bankdata.saveMoney(valor);
             MessageBox.Show("Saldo actualizado a " + bankdata.saldo + "$");
             txtSaldo.Text = Convert.ToString(bankdata.saldo);
-            
+            bankdata.actualizarSaldo(bankdata.interes / 100);
         }
 
         private void btnSacardinero_Click(object sender, EventArgs e)
@@ -157,12 +158,15 @@ namespace HN212526_DESAFIO2_CLAVE1
                 bankdata.earnMoney(valor);
                 MessageBox.Show("Se ha retirado: " + Convert.ToString(valor) + "$ con exito");
                 txtSaldo.Text = Convert.ToString(bankdata.saldo);
+                bankdata.actualizarSaldo(bankdata.interes / 100);
             }
 
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            bankdata.actualizarSaldo(bankdata.interes / 100);
+            MessageBox.Show("Sesión cerrada con éxito");
             bankdata.saldo = 0;
             bankdata.createUserID = "";
             //vamos a generar el interes por el valor de este saldo ingresado

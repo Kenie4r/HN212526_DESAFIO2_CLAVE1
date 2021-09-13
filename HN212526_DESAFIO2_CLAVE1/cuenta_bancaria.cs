@@ -14,8 +14,8 @@ namespace HN212526_DESAFIO2_CLAVE1
         public float interes = 0.12F;
 
         //vamos a generar el  saldo actual para hacerlo más comodo
-    
 
+        public string creacionF;
         public float saldo ;
 
 
@@ -63,10 +63,10 @@ namespace HN212526_DESAFIO2_CLAVE1
             //una función en la cual vamos a crear la cuenta 
             Random rdn = new Random();
             string codigo = "";
-            DateTime dt = new DateTime();
-            codigo += dt.ToString("dd");
-            codigo += dt.ToString("MM");
-            codigo += dt.ToString("yyyy");
+            creacionF = DateTime.Now.ToString("dd-MM-yyyy");
+            codigo += DateTime.Now.ToString("dd");
+            codigo += DateTime.Now.ToString("MM");
+            codigo += DateTime.Now.ToString("yyyy");
             codigo += "-";
             codigo += Convert.ToString(rdn.Next(1000001, 9999999));
             this.cuentaID= codigo;
@@ -76,8 +76,15 @@ namespace HN212526_DESAFIO2_CLAVE1
         //actualizar datos de cuenta
         public void actualizarSaldo(float value)
         {
-            float interes = this.interes / 365;
-            saldo  = value * interes;
+            //vemos que día es hoy y si es diferente le ponemos el interes
+
+            string hoy = DateTime.Now.ToString("dd-MM-yyyy");
+            if (creacionF != hoy)
+            {
+                float interes = this.interes / 365;
+                saldo = value * interes;
+            }
+        
         }
 
 
